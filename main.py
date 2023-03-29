@@ -20,6 +20,7 @@ for i in range(m):
     heapq.heappush(pq, (finish_time, thread))
 
 return output
+
 def main():
 # Get input from user
 n, m = map(int, input().split())
@@ -31,6 +32,7 @@ result = parallel_processing(n, m, data)
 # Print results
 for thread, start_time in result:
     print(thread, start_time)
-
+    
+    
 if __name__ == "__main__":
     main()
