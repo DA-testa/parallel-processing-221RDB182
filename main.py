@@ -1,8 +1,9 @@
 # python3
+import heapq
 
 def parallel_processing(n, m, data):
-    output = []
-    # Initialize priority queue with first n jobs
+output = []
+# Initialize priority queue with first n jobs
 pq = [(0, i) for i in range(n)]
 heapq.heapify(pq)
 
@@ -19,21 +20,17 @@ for i in range(m):
     heapq.heappush(pq, (finish_time, thread))
 
 return output
-
 def main():
+# Get input from user
 n, m = map(int, input().split())
 data = list(map(int, input().split()))
-    n = 0
-    m = 0
 
-   # Call parallel_processing function
+# Call parallel_processing function
 result = parallel_processing(n, m, data)
 
 # Print results
 for thread, start_time in result:
     print(thread, start_time)
-
-
 
 if __name__ == "__main__":
     main()
